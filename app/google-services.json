@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "800169496964",
+    "project_id": "projeto-firebase-fda25",
+    "storage_bucket": "projeto-firebase-fda25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800169496964:android:3bf609e7eb6497e39acdd1",
+        "android_client_info": {
+          "package_name": "com.example.tela_login_augusto_camargo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800169496964-pak6rqgi7aa4poecu4i6tfagfig6tjhm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2BOoK2MU3z9fAhA_0t-s60rSEqj4OJ3c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800169496964-pak6rqgi7aa4poecu4i6tfagfig6tjhm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
