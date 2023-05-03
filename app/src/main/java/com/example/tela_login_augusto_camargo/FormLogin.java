@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Objects;
+
+
 public class FormLogin extends AppCompatActivity {
 
 
@@ -23,18 +26,15 @@ public class FormLogin extends AppCompatActivity {
 
 
 
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         IniciarComponentes();
 
-        text_tela_cadastro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        text_tela_cadastro.setOnClickListener(v -> {
 
-                Intent intent = new Intent(FormLogin.this, FormCadastro.class);
-                startActivity(intent);
+            Intent intent = new Intent(FormLogin.this, FormCadastro.class);
+            startActivity(intent);
 
 
-            }
         });
     }
 
