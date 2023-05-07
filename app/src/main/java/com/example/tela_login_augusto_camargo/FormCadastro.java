@@ -81,7 +81,7 @@ public class FormCadastro extends AppCompatActivity {
             } else {
                 String erro;
                 try {
-                    throw task.getException();
+                    throw Objects.requireNonNull(task.getException());
                 } catch (FirebaseAuthWeakPasswordException e) {
                     erro = "Digite uma senha com no minimo 6 caracteres";
                 } catch (FirebaseAuthUserCollisionException e) {
@@ -114,7 +114,7 @@ public class FormCadastro extends AppCompatActivity {
         Map<String, Object> usuarios = new HashMap<>();
         usuarios.put("nome", nome);
 
-        usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        usuarioID = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
 
         DocumentReference documentReference = db.collection("Usuarios").document(usuarioID);
 
