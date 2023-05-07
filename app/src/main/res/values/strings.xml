@@ -7,4 +7,9 @@
     <string name="email_icon">Email icon</string>
     <string name="user_icon">User icon</string>
     <string name="Deslogar">Deslogar</string>
+    <string name="instalogo">instaLogo</string>
+    <string name="nome">Nome</string>
+    <string name="senha">Senha</string>
+    <string name="email">Email</string>
+    <string name="cadastrar">Cadastrar</string>
 </resources>
