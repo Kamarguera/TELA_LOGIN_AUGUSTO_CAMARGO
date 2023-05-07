@@ -3,4 +3,8 @@
     <string name="entrar">Entrar</string>
     <string name="text_cadastro">Crie uma conta clicando aqui</string>
     <string name="title_cadastro">Cadastre-se</string>
+    <string name="user_image">User image</string>
+    <string name="email_icon">Email icon</string>
+    <string name="user_icon">User icon</string>
+    <string name="Deslogar">Deslogar</string>
 </resources>
