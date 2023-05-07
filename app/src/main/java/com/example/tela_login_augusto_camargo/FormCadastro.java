@@ -40,9 +40,9 @@ public class FormCadastro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_cadastro);
-
         Objects.requireNonNull(getSupportActionBar()).hide();
         IniciarComponentes();
+
 
         btn_cadastrar.setOnClickListener(v -> {
 
@@ -70,41 +70,37 @@ public class FormCadastro extends AppCompatActivity {
         String email = edit_email.getText().toString();
         String senha = edit_senha.getText().toString();
 
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(
-                task -> {
-                    if (task.isSuccessful()) {
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                SalvarDadosUsuario();
+                Snackbar snackbar = Snackbar.make(v, mensagens[1], Snackbar.LENGTH_SHORT);
+                snackbar.setBackgroundTint(Color.WHITE);
+                snackbar.setTextColor(Color.BLACK);
+                snackbar.show();
 
-
-                        SalvarDadosUsuario();
-                        Snackbar snackbar = Snackbar.make(v, mensagens[1], Snackbar.LENGTH_SHORT);
-                        snackbar.setBackgroundTint(Color.WHITE);
-                        snackbar.setTextColor(Color.BLACK);
-                        snackbar.show();
-
-                    } else {
-                        String erro;
-                        try {
-                            throw task.getException();
-                        } catch (FirebaseAuthWeakPasswordException e) {
-                            erro = "Digite uma senha com no minimo 6 caracteres";
-                        } catch (FirebaseAuthUserCollisionException e) {
-                            erro = "Conta já foi cadastrada";
-                        } catch (FirebaseAuthInvalidCredentialsException e) {
-                            erro = "E-mail inválido!";
-                        } catch (NullPointerException e) {
-                            erro = "Null";
-                        } catch (Exception e) {
-                            erro = "Erro ao cadastrar usuário";
-                        }
-
-                        Snackbar snackbar = Snackbar.make(v, erro, Snackbar.LENGTH_SHORT);
-                        snackbar.setBackgroundTint(Color.WHITE);
-                        snackbar.setTextColor(Color.BLACK);
-                        snackbar.show();
-
-                    }
+            } else {
+                String erro;
+                try {
+                    throw task.getException();
+                } catch (FirebaseAuthWeakPasswordException e) {
+                    erro = "Digite uma senha com no minimo 6 caracteres";
+                } catch (FirebaseAuthUserCollisionException e) {
+                    erro = "Conta já foi cadastrada";
+                } catch (FirebaseAuthInvalidCredentialsException e) {
+                    erro = "E-mail inválido!";
+                } catch (NullPointerException e) {
+                    erro = "Null";
+                } catch (Exception e) {
+                    erro = "Erro ao cadastrar usuário";
                 }
-        );
+
+                Snackbar snackbar = Snackbar.make(v, erro, Snackbar.LENGTH_SHORT);
+                snackbar.setBackgroundTint(Color.WHITE);
+                snackbar.setTextColor(Color.BLACK);
+                snackbar.show();
+
+            }
+        });
 
 
     }
@@ -131,7 +127,7 @@ public class FormCadastro extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Log.d("db_error", "erro ao salvar os dados" + e.toString());
+                Log.d("db_error", "erro ao salvar os dados" + e);
 
             }
         });

@@ -43,7 +43,6 @@ public class FormLogin extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         IniciarComponentes();
         text_tela_cadastro.setOnClickListener(v -> {
-
             Intent intent = new Intent(FormLogin.this, FormCadastro.class);
             startActivity(intent);
         });
