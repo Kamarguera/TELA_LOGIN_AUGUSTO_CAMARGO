@@ -14,9 +14,10 @@
         android:id="@+id/title_cadastrese"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:text="@string/title_cadastro"
-        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textColor="@color/entregasja_yellow"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,26 +29,25 @@
 
     <View
         android:id="@+id/containerComponents"
-        style="@style/ContainerComponents"
+        style="@style/ContainerComponentsCadastro"
+
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_cadastrese"
-
-        />
-
+        app:layout_constraintTop_toBottomOf="@id/title_cadastrese" />
 
     <EditText
         android:id="@+id/edit_nome"
         style="@style/Edit_Text"
+        android:layout_marginTop="100dp"
         android:autofillHints="AUTOFILL_HINT_PERSON_NAME"
         android:hint="@string/nome"
         android:inputType="text"
+
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
-        app:layout_constraintTop_toTopOf="@id/containerComponents"
-
-        />
-
+        app:layout_constraintTop_toTopOf="@+id/containerComponents" />
 
     <EditText
         android:id="@+id/edit_email"
@@ -65,23 +65,62 @@
     <EditText
         android:id="@+id/edit_senha"
         style="@style/Edit_Text"
+
+        android:autofillHints="password"
         android:drawableEnd="@drawable/ic_eye"
         android:hint="@string/senha"
+
         android:inputType="numberPassword"
-        app:layout_constraintEnd_toEndOf="@id/containerComponents"
-        app:layout_constraintEnd_toStartOf="@id/containerComponents"
-        app:layout_constraintTop_toBottomOf="@id/edit_email"
+        app:layout_constraintEnd_toEndOf="@+id/edit_email"
+        app:layout_constraintTop_toBottomOf="@+id/edit_email" />
 
-        android:autofillHints="password" />
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+        app:layout_constraintStart_toStartOf="@+id/containerComponents"
+        app:layout_constraintTop_toTopOf="@+id/containerComponents">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:text="@string/entregador"
+
+
+            />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/restaurante"
+
+            />
+
+
+    </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_cadastrar"
-        style="@style/Button"
+        style="@style/ButtonMonoChromatic"
+        android:layout_marginTop="120dp"
         android:text="@string/cadastrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/containerComponents"
+
 
         />
 

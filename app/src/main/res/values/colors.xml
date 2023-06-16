@@ -7,7 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
-    <color name="instayellow1">#ffc200</color>
-    <color name="instared2">#ff0047</color>
-    <color name="instapurple3">#c826ff</color>
+    <color name="instayellow1">#6efafa</color>
+    <color name="instared2">#cb4ea9</color>
+    <color name="instapurple3">#310577</color>
+    <color name="entregasja_orange">#FC4619</color>
+    <color name="entregasja_yellow">#FFD401</color>
+    <color name="entregasja_purple">#FF00C2</color>
+    <color name="entregasja_purpledarker">#B3128C</color>
+    <color name="entregasja_teal">#19FFFC</color>
+    <color name="entregasja_tealdarker">#09B3B0</color>
 </resources>

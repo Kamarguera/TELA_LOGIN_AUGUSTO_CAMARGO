@@ -6,7 +6,7 @@
         android:angle="90"
         android:centerColor="@color/instared2"
         android:endColor="@color/instapurple3"
-        android:startColor="@color/instayellow1"
+        android:startColor="@color/purple_500"
     />
 
 </shape>

@@ -3,8 +3,10 @@ package com.example.tela_login_augusto_camargo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +30,6 @@ import java.util.Map;
 import java.util.Objects;
 
 public class FormCadastro extends AppCompatActivity {
-
     private EditText edit_nome, edit_email, edit_senha;
     private Button btn_cadastrar;
 
@@ -78,6 +79,16 @@ public class FormCadastro extends AppCompatActivity {
                 snackbar.setTextColor(Color.BLACK);
                 snackbar.show();
 
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        TelaLogin();
+                    }
+                }, 3000);
+
+
             } else {
                 String erro;
                 try {
@@ -105,6 +116,13 @@ public class FormCadastro extends AppCompatActivity {
 
     }
 
+    private void TelaLogin() {
+        Intent intent = new Intent(FormCadastro.this, FormLogin.class);
+        FirebaseAuth.getInstance().signOut();
+        startActivity(intent);
+        finish();
+    }
+
     private void SalvarDadosUsuario() {
 
         String nome = edit_nome.getText().toString();
@@ -123,7 +141,7 @@ public class FormCadastro extends AppCompatActivity {
             public void onSuccess(Void aVoid) {
                 Log.d("db", "Sucesso ao salvar os dados");
 
-            }
+                }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {

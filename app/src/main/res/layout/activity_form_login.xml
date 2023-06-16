@@ -2,13 +2,14 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
 
     android:layout_height="match_parent">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
@@ -16,29 +17,47 @@
 
 
         <ImageView
-            android:contentDescription="@string/instalogo"
             android:id="@+id/instalogo"
-
             android:layout_width="230dp"
             android:layout_height="220dp"
+            android:contentDescription="@string/instalogo"
 
-            android:src="@drawable/insta"
+            android:src="@drawable/img"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.058" />
+            app:layout_constraintVertical_bias="0.0"
 
-        <View
-            android:id="@+id/containerComponents"
-            style="@style/ContainerComponents"
+
+            />
+
+        <TextView
+            android:id="@+id/text_entregasja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/burlingame"
+            android:text="@string/entregasja"
+            android:textAlignment="center"
+            android:textColor="@color/entregasja_yellow"
+            android:textSize="36sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
 
 
             app:layout_constraintTop_toBottomOf="@+id/instalogo" />
+
+        <View
+            android:id="@+id/containerComponents"
+            style="@style/ContainerComponentsLogin"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_entregasja" />
 
         <EditText
             android:id="@+id/edit_email"
@@ -65,7 +84,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_entrar"
-            style="@style/Button"
+            style="@style/ButtonMonoChromatic"
             android:text="@string/entrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
@@ -77,26 +96,27 @@
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:indeterminateTint="@color/white"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/containerComponents"
 
 
-            />
+            app:layout_constraintTop_toBottomOf="@id/containerComponents" />
 
         <TextView
             android:id="@+id/text_tela_cadastro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginTop="16dp"
             android:elegantTextHeight="true"
+            android:fontFamily="@font/burlingame"
             android:text="@string/text_cadastro"
-            android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="@color/entregasja_yellow"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

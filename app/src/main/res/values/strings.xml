@@ -9,7 +9,10 @@
     <string name="Deslogar">Deslogar</string>
     <string name="instalogo">instaLogo</string>
     <string name="nome">Nome</string>
+    <string name="entregador">        Entregador</string>
+    <string name="restaurante">       Restaurante</string>
     <string name="senha">Senha</string>
     <string name="email">Email</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="entregasja">Entregas Já</string>
 </resources>
