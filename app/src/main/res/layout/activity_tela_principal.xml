@@ -109,7 +109,7 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/btn_encontrar_motoboys"
+        app:layout_constraintTop_toBottomOf="@+id/btn_encontrar_entregador"
 
         />
 
