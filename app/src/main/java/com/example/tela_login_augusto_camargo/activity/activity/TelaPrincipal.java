@@ -1,25 +1,22 @@
-package com.example.tela_login_augusto_camargo;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.tela_login_augusto_camargo.activity.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tela_login_augusto_camargo.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.Objects;
 
 public class TelaPrincipal extends AppCompatActivity {
     private Button btn_deslogar;
+    private Button btn_encontrar_entregador;
     private TextView nomeUsuario, emailUsuario;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String usuarioID;
@@ -32,6 +29,14 @@ public class TelaPrincipal extends AppCompatActivity {
 
 
         btn_deslogar.setOnClickListener(v -> {
+
+            FirebaseAuth.getInstance().signOut();
+            TelaLogin();
+
+        });
+
+
+        btn_encontrar_entregador.setOnClickListener(v -> {
 
             FirebaseAuth.getInstance().signOut();
             TelaLogin();
@@ -72,6 +77,7 @@ public class TelaPrincipal extends AppCompatActivity {
         nomeUsuario = findViewById(R.id.textNomeUsuario);
         emailUsuario = findViewById(R.id.textEmail);
         btn_deslogar = findViewById(R.id.btn_deslogar);
+        btn_encontrar_entregador = findViewById(R.id.btn_encontrar_entregador);
 
 
     }

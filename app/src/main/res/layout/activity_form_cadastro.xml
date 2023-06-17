@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".FormCadastro">
+    tools:context=".activity.activity.FormCadastro">
 
 
     <TextView
@@ -42,7 +42,7 @@
         style="@style/Edit_Text"
         android:layout_marginTop="100dp"
         android:autofillHints="AUTOFILL_HINT_PERSON_NAME"
-        android:hint="@string/nome"
+        android:hint="@string/nomeMotoboy"
         android:inputType="text"
 
         app:layout_constraintEnd_toEndOf="@id/containerComponents"

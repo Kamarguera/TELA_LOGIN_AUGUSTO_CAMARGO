@@ -1,9 +1,4 @@
-package com.example.tela_login_augusto_camargo;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.tela_login_augusto_camargo.activity.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,6 +10,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tela_login_augusto_camargo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;

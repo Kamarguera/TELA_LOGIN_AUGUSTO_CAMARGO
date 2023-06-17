@@ -1,8 +1,10 @@
-package com.example.tela_login_augusto_camargo;
+package com.example.tela_login_augusto_camargo.activity.activity;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.example.tela_login_augusto_camargo.R;
 
 public class MainActivity extends AppCompatActivity {
 

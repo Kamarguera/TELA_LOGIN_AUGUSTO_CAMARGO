@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".TelaPrincipal">
+    tools:context=".activity.activity.TelaPrincipal">
 
 
     <View
@@ -109,9 +109,25 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/textEmail"
+        app:layout_constraintTop_toBottomOf="@+id/btn_encontrar_motoboys"
 
         />
+
+    <Button
+        android:id="@+id/btn_encontrar_entregador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/black"
+        android:padding="20dp"
+        android:text="@string/encontrar_entregador"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+
+        app:layout_constraintTop_toBottomOf="@+id/textEmail"
+        tools:layout_editor_absoluteX="20dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
