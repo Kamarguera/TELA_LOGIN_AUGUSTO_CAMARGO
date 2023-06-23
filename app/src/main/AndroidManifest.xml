@@ -12,7 +12,7 @@
         android:theme="@style/Theme.TELA_LOGIN_AUGUSTO_CAMARGO"
         tools:targetApi="31">
         <activity
-            android:name=".activity.activity.FormLogin"
+            android:name=".activity.activity.MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity.activity.TelaPrincipal"
@@ -21,10 +21,10 @@
             android:name=".activity.activity.FormCadastro"
             android:exported="false" />
         <activity
-            android:name=".activity.activity.MainActivity"
+            android:name=".activity.activity.TelaMotoboysRecyclerView"
             android:exported="false" />
         <activity
-            android:name=".activity.activity.ListarMotoboysRecyclerView"
+            android:name=".activity.activity.FormLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

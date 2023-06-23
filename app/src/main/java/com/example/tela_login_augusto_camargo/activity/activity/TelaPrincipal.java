@@ -36,12 +36,7 @@ public class TelaPrincipal extends AppCompatActivity {
         });
 
 
-        btn_encontrar_entregador.setOnClickListener(v -> {
-
-            FirebaseAuth.getInstance().signOut();
-            TelaLogin();
-
-        });
+        btn_encontrar_entregador.setOnClickListener(v -> TelaListaMotoboys());
     }
 
 
@@ -70,6 +65,13 @@ public class TelaPrincipal extends AppCompatActivity {
 
     private void TelaLogin() {
         Intent intent = new Intent(TelaPrincipal.this, FormLogin.class);
+        startActivity(intent);
+        finish();
+    }
+
+
+    private void TelaListaMotoboys() {
+        Intent intent = new Intent(TelaPrincipal.this, TelaMotoboysRecyclerView.class);
         startActivity(intent);
         finish();
     }

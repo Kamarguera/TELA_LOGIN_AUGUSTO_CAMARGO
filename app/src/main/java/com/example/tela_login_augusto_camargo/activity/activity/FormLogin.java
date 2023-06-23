@@ -1,6 +1,7 @@
 package com.example.tela_login_augusto_camargo.activity.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,9 +43,20 @@ public class FormLogin extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         IniciarComponentes();
         text_tela_cadastro.setOnClickListener(v -> {
+
+
+//            SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
+
+
+
+
+
+
             Intent intent = new Intent(FormLogin.this, FormCadastro.class);
             startActivity(intent);
         });
+
+
         bt_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,14 +115,15 @@ public class FormLogin extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
-        if(usuarioAtual!=null){
-            TelaPrincipal();
-        }
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
+//        if(usuarioAtual!=null){
+//            TelaPrincipal();
+//        }
+//    }
+
 
     private void TelaPrincipal() {
         Intent intent = new Intent(FormLogin.this, TelaPrincipal.class);

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class ListarMotoboysRecyclerView extends AppCompatActivity {
+public class TelaMotoboysRecyclerView extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private List<Motoboy> listaMotoboys = new ArrayList<>();
