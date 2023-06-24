@@ -1,5 +1,7 @@
 package com.example.tela_login_augusto_camargo.activity.activity;
 
+import static android.app.PendingIntent.getActivity;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -20,13 +22,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
 
 public class FormLogin extends AppCompatActivity {
-
     private TextView text_tela_cadastro;
     private EditText edit_email, edit_senha;
     private Button bt_entrar;
@@ -38,25 +38,19 @@ public class FormLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_login);
-
-
         Objects.requireNonNull(getSupportActionBar()).hide();
         IniciarComponentes();
+        sharedPrefGetCredentials();
+        setFieldText();
+
+
+
+
+
         text_tela_cadastro.setOnClickListener(v -> {
-
-
-//            SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
-
-
-
-
-
-
             Intent intent = new Intent(FormLogin.this, FormCadastro.class);
             startActivity(intent);
         });
-
-
         bt_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,7 +109,28 @@ public class FormLogin extends AppCompatActivity {
 
     }
 
-//    @Override
+
+    private void setFieldText() {
+        edit_email.setText(sharedPrefGetEmail());
+        edit_senha.setText(sharedPrefGetSenha());
+
+    }
+
+    private String sharedPrefGetSenha() {
+        SharedPreferences sp = getSharedPreferences("AutoCompEmail", MODE_PRIVATE);
+        String senha =  sp.getString("senha", "lol");
+        return senha;
+    }
+
+
+    private String sharedPrefGetEmail() {
+        SharedPreferences sp = getSharedPreferences("AutoCompEmail", MODE_PRIVATE);
+        String email =  sp.getString("email", "lol");
+        return email;
+
+    }
+
+    //    @Override
 //    protected void onStart() {
 //        super.onStart();
 //        FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
@@ -123,6 +138,8 @@ public class FormLogin extends AppCompatActivity {
 //            TelaPrincipal();
 //        }
 //    }
+
+
 
 
     private void TelaPrincipal() {

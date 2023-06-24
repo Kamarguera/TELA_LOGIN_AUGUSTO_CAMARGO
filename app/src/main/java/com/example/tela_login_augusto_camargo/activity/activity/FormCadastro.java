@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -58,11 +59,30 @@ public class FormCadastro extends AppCompatActivity {
 
 
             } else {
+
+                sharedPrefSet();
+
+
                 CadastrarUsuario(v);
 
             }
         });
     }
+
+    private void sharedPrefSet() {
+
+        String email = edit_email.getText().toString();
+        String senha = edit_senha.getText().toString();
+
+        SharedPreferences sp = getSharedPreferences("AutoCompEmail", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("email", email);
+        editor.putString("senha", senha);
+        editor.apply();
+
+
+    }
+
 
     private void CadastrarUsuario(View v) {
 
@@ -139,7 +159,7 @@ public class FormCadastro extends AppCompatActivity {
             public void onSuccess(Void aVoid) {
                 Log.d("db", "Sucesso ao salvar os dados");
 
-                }
+            }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
